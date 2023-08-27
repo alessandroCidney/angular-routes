@@ -6,7 +6,13 @@ import { PageErrorComponent } from './pages/page-error/page-error.component'
 
 const routes: Routes = [
   { path: '', component: HomeComponent, pathMatch: 'full' },
-  { path: 'sobre/:id/:username', component: SobreComponent },
+  {
+    path: 'sobre',
+    component: SobreComponent,
+    children: [
+      { path: 'test', component: SobreComponent },
+    ]
+  },
   { path: '404', component: PageErrorComponent },
   { path: '**', redirectTo: '404' },
 ];
