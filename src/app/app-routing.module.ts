@@ -13,6 +13,11 @@ const routes: Routes = [
       { path: 'test', component: SobreComponent },
     ]
   },
+  {
+    path: 'dashboard',
+    loadChildren: () => import('./dashboard/dashboard.module')
+      .then(m => m.DashboardModule)
+  },
   { path: '404', component: PageErrorComponent },
   { path: '**', redirectTo: '404' },
 ];
