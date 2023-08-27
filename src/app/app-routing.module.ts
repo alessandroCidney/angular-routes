@@ -23,6 +23,10 @@ const routes: Routes = [
 ];
 
 @NgModule({
+  // useHash is useful for older applications
+  // that don't understand the newer routing system 
+  // (like Angular + Cordova)
+  // imports: [RouterModule.forRoot(routes, { useHash: true })],
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
